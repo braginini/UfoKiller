@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: b5703d58c4e36b94d905bd3aa603aa77
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: CATRig_Lp_Noga_1
+    100002: CATRig_Lp_Noga_2
+    100004: CATRig_Lp_Noga_Ankle
+    100006: CATRig_Lp_Noga_Platform
+    100008: CATRig_Lz_Noga_1
+    100010: CATRig_Lz_Noga_2
+    100012: CATRig_Lz_Noga_Ankle
+    100014: CATRig_Lz_Noga_Platform
+    100016: CATRig_Rp_Noga_1
+    100018: CATRig_Rp_Noga_2
+    100020: CATRig_Rp_Noga_Ankle
+    100022: CATRig_Rp_Noga_Platform
+    100024: CATRig_Rz_Noga_1
+    100026: CATRig_Rz_Noga_2
+    100028: CATRig_Rz_Noga_Ankle
+    100030: CATRig_Rz_Noga_Platform
+    100032: CATRig_Telo_
+    100034: CATRigGolova_
+    100036: CATRigSpine
+    100038: Character001
+    100040: sheep_01
+    100042: //RootNode
+    400000: CATRig_Lp_Noga_1
+    400002: CATRig_Lp_Noga_2
+    400004: CATRig_Lp_Noga_Ankle
+    400006: CATRig_Lp_Noga_Platform
+    400008: CATRig_Lz_Noga_1
+    400010: CATRig_Lz_Noga_2
+    400012: CATRig_Lz_Noga_Ankle
+    400014: CATRig_Lz_Noga_Platform
+    400016: CATRig_Rp_Noga_1
+    400018: CATRig_Rp_Noga_2
+    400020: CATRig_Rp_Noga_Ankle
+    400022: CATRig_Rp_Noga_Platform
+    400024: CATRig_Rz_Noga_1
+    400026: CATRig_Rz_Noga_2
+    400028: CATRig_Rz_Noga_Ankle
+    400030: CATRig_Rz_Noga_Platform
+    400032: CATRig_Telo_
+    400034: CATRigGolova_
+    400036: CATRigSpine
+    400038: Character001
+    400040: sheep_01
+    400042: //RootNode
+    4300000: sheep_01
+    7400000: sheep_walk
+    7400002: sheep_run
+    7400004: sheep_shake
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: sheep_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: sheep_walk
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 25
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: sheep_run
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 43
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: sheep_shake
+      takeName: Take 001
+      firstFrame: 44
+      lastFrame: 74
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

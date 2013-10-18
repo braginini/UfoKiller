@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{F080AA38-AF01-5163-BED5-860FA7A5162C}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_0;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Frameworks\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\EasyButton.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\EasyJoystick.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\EasyTouch.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\EasyTouchInput.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\Finger.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\Gesture.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\MonoSingleton.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\MovingJoystick.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\VirtualScreen.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\_C#-Event-Template\C_EasyButtonTemplate.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\_C#-Event-Template\C_EasyJoystickTemplate.cs" />
+     <Compile Include="Assets\Frameworks\EasyTouch\Plugins\_C#-Event-Template\C_EasyTouchTemplate.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX2_AutoRotate.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
+     <Compile Include="Assets\JMO Assets\Toony Gooch\Demo\AutoRotateObject.cs" />
+     <Compile Include="Assets\Scripts\Configs\Mobile\ScreenConfig.cs" />
+     <Compile Include="Assets\Scripts\Control\FragmentedObjectExploder.cs" />
+     <Compile Include="Assets\Scripts\Control\GestureMenu.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtBase.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtJoystick.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtJoystick2.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtMouse.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtPerceptual.cs" />
+     <Compile Include="Assets\Scripts\Control\LookAtTouch.cs" />
+     <Compile Include="Assets\Scripts\Control\TargetedSheep.cs" />
+     <Compile Include="Assets\Scripts\Control\UfoDetonator.cs" />
+     <Compile Include="Assets\Scripts\Control\Voice.cs" />
+     <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
+     <Compile Include="Assets\Scripts\GlobalVariable.cs" />
+     <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
+     <Compile Include="Assets\Scripts\Gun\BazookaScript.cs" />
+     <Compile Include="Assets\Scripts\Gun\BulletShellExit.cs" />
+     <Compile Include="Assets\Scripts\Gun\Gun.cs" />
+     <Compile Include="Assets\Scripts\Gun\GunScript.cs" />
+     <Compile Include="Assets\Scripts\Gun\turret\BaseTurret.cs" />
+     <Compile Include="Assets\Scripts\Gun\turret\PerceptualTurret.cs" />
+     <Compile Include="Assets\Scripts\Gun\turret\TouchTuret.cs" />
+     <Compile Include="Assets\Scripts\Gun\turret\Turret.cs" />
+     <Compile Include="Assets\Scripts\Menu\Fader.cs" />
+     <Compile Include="Assets\Scripts\Menu\FinalScoreIniter.cs" />
+     <Compile Include="Assets\Scripts\Menu\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\Movement\MoveMotor.cs" />
+     <Compile Include="Assets\Scripts\Movement\MoveMotor2.cs" />
+     <Compile Include="Assets\Scripts\Movement\UfoMotor.cs" />
+     <Compile Include="Assets\Scripts\Perceptual\PerceptualDataSource.cs" />
+     <Compile Include="Assets\Scripts\Spawn\SheepSpawner.cs" />
+     <Compile Include="Assets\Scripts\Spawn\UfoSpawn.cs" />
+     <Compile Include="Assets\Scripts\test\SplitMeshIntoTriangles.cs" />
+     <Compile Include="Assets\Scripts\test\UfoSpawner.cs" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\Frameworks\EasyTouch\Readme_first.txt" />
+     <None Include="Assets\Frameworks\Cartoon FX\CartoonFX Releases Notes.txt" />
+     <None Include="Assets\Models\Characters\Enemies\ufo\light_beam_anim.txt" />
+     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX2 Releases Notes.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimOutlineHard.shader" />
+     <None Include="Assets\Models\Characters\Enemies\ufo\ufo_anim.txt" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+     <None Include="Assets\JMO Assets\Toony Gooch\!ToonyGooch Readme.txt" />
+     <None Include="Assets\Models\Weapons\Minigun\02\hand_anim.txt" />
+     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
+     <None Include="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimLight.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+     <None Include="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimAlpha.shader" />
+     <None Include="Assets\Models\Weapons\Minigun\barrels_anim.txt" />
+     <None Include="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimOutline.shader" />
+     <None Include="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
+     <None Include="Assets\Frameworks\Cartoon FX\CartoonFX Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{6B28DADD-4218-B299-6A8C-54CC148EB840}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{6844D8CD-1A65-A34C-5EDC-140C7D380517}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
