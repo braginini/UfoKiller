@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimAlpha.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Movement\UfoMotor.cs">
     <Files>
-      <File FileName="Assets\JMO Assets\Toony Gooch\Shaders\Toony_Gooch_RimAlpha.shader" Line="76" Column="1" />
+      <File FileName="Assets\Scripts\Movement\UfoMotor.cs" Line="82" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c437db7ed95d9649b0fb11fc72f81f4
+guid: f1891d25cf22c77409bacfcae051dc38
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -93,7 +93,7 @@ ModelImporter:
     100174: UFO_g_frag_28
     100176: UFO_g_frag_29
     100178: UFO_g_frag_30
-    100180: UFO_RIG_Hub_02
+    100180: UFO_RIG_Hub_01
     400000: UFO_b_frad_00
     400002: UFO_b_frad_01
     400004: UFO_b_frad_02
@@ -184,7 +184,7 @@ ModelImporter:
     400174: UFO_g_frag_28
     400176: UFO_g_frag_29
     400178: UFO_g_frag_30
-    400180: UFO_RIG_Hub_02
+    400180: UFO_RIG_Hub_01
     4300000: UFO_b_frad_09
     4300002: UFO_b_frad_01
     4300004: UFO_b_frad_02

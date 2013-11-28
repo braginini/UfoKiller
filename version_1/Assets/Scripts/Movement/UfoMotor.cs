@@ -17,6 +17,7 @@ public class UfoMotor : MonoBehaviour
 	private bool killed = false;
 
     public GameObject hitParticles;
+    public GameObject lightBeam;
 
     private FragmentedObjectExploder exploder;
 	
@@ -62,16 +63,8 @@ public class UfoMotor : MonoBehaviour
         {
             killed = true;
 
-            var explosion = gameObject.GetComponentInChildren<ParticleSystem>();
-            if (explosion)
-            {
-                Debug.Log("Expolosion is running");
-                explosion.Play();
-            }
-            else
-                Debug.LogWarning("Expolosion is not found");
-
             audio.PlayOneShot(ufoDying);
+
             GameObject.Find("Inventory").BroadcastMessage("incrementUfoKilled", 0);
 
             BeforeDestroy();
@@ -101,6 +94,9 @@ public class UfoMotor : MonoBehaviour
 	    this.exploder = GetComponent<FragmentedObjectExploder>();
         if (!exploder)
             Debug.LogWarning("Object Exploder is not attached");
+
+        if (!lightBeam)
+            Debug.LogWarning("Object LightBeam is not attached");
 	}
 	
 	void Update()
@@ -113,7 +109,7 @@ public class UfoMotor : MonoBehaviour
 	{
 		if (target)
 		{
-			Debug.Log("Freeing target");
+			//Debug.Log("Freeing target");
 			target.capturing = false;
 			target.targeted = false;
 		}
@@ -149,16 +145,25 @@ public class UfoMotor : MonoBehaviour
 	
 	private IEnumerator Steal()
 	{
-		Debug.Log("Arrived to height " + transform.position.y);
-		transform.FindChild("LightBeam").animation.Play("Open");
+		//Debug.Log("Arrived to height " + transform.position.y);
+        if (lightBeam)
+		    lightBeam.animation.Play("Open");
+
 		yield return new WaitForSeconds(10f);
 		Destroy(target.gameObject);
 		GameObject.Find("Inventory").BroadcastMessage("decrementSheep", 0);
-		transform.FindChild("LightBeam").animation.Play("Close");
-		audio.PlayOneShot(ufoLeaving, 0.3f);
+
+		if (lightBeam)
+		    lightBeam.animation.Play("Close");
+
+		 audio.PlayOneShot(ufoLeaving, 0.3f);
+
 		yield return new WaitForSeconds(2f);
-		Destroy(transform.FindChild("LightBeam").gameObject);
-		Debug.Log("Switching to EscapeState");
+
+        if (lightBeam)
+            Destroy(lightBeam);
+
+		//Debug.Log("Switching to EscapeState");
 		updateState = EscapeState;
 	}
 	
@@ -202,6 +207,7 @@ public class UfoMotor : MonoBehaviour
 			if (!target.capturing)
 			{
 				target.capturing = true;
+
 				audio.PlayOneShot(ufoArriving, 0.3f);
 				Debug.Log("Capturing");
 			}

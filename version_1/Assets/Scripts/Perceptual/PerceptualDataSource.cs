@@ -26,7 +26,7 @@ public class PerceptualDataSource : MonoBehaviour {
 
         if (!pp.Init(mode))
         {
-            Debug.LogError("Unable to initialize the PXCUPipeline. Running application without camera");
+            Debug.LogWarning("Unable to initialize the PXCUPipeline. Running application without camera");
         }        
     }
 
