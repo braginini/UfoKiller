@@ -140,7 +140,7 @@ public class UfoMotor : MonoBehaviour
 				break;
 			}
 		}
-		Debug.Log("Target " + (target ? "" : "not ") + "found");
+		//Debug.Log("Target " + (target ? "" : "not ") + "found");
 	}
 	
 	private IEnumerator Steal()
@@ -209,21 +209,21 @@ public class UfoMotor : MonoBehaviour
 				target.capturing = true;
 
 				audio.PlayOneShot(ufoArriving, 0.3f);
-				Debug.Log("Capturing");
+				//Debug.Log("Capturing");
 			}
 		}
 		if (distance < 0.1f)
 		{
-			Debug.Log("Setting steal state");
+			//Debug.Log("Setting steal state");
 			updateState = StealState;
-			return;
+			return; 
 		}
 
-		var speed = 5f + distance * distance / 100;
+		var speed = 5f + distance * distance / 500;
 		var nextPosition = Vector3.Lerp(transform.position, to, Time.deltaTime * speed / distance);
 		
 		// This cycle here is for handling situations when speed of the ufo is too high to get to the capturing area
-		// and ufo passes this area without stopping it in
+		// and ufo passes this area without stopping in it
 		while (distance < Vector3.Distance(transform.position, nextPosition) && speed > 0.001)
 		{
 			var newSpeed = speed / 2f;
