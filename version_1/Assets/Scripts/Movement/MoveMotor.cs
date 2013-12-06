@@ -131,7 +131,7 @@ public class MoveMotor : MonoBehaviour {
         if (checkValidCollistions(collision))
         {
             angle = Random.Range(-90.0f, 90.0f);
-            if (collision.gameObject.name.Equals("WoodFence"))
+            if (collision.gameObject.name.Equals("fence"))
                 angle = 90.0f;
             if (angle != 0)
                 rotating = true;
@@ -145,7 +145,7 @@ public class MoveMotor : MonoBehaviour {
 
     private float getNextStop()
     {
-        return timer + Random.Range(100f, 1000f);
+        return timer + Random.Range(500f, 1000f);
     }
 
     public void hitted(RaycastHit hit, Ray ray)
