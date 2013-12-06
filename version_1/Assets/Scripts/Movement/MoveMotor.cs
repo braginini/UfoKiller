@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MoveMotor : MonoBehaviour {
 
-    public float speed = 1f;
+    public float speed = 0.1f;
+	private float currSpeed;
     public float rotationSpeed = 90.0f;
     private bool rotating = false;
     private float angle = 0;
@@ -21,6 +22,7 @@ public class MoveMotor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.currSpeed = speed;
 
         if (!sheepModel)
             Debug.LogError("Sheep model not found");
@@ -56,9 +58,9 @@ public class MoveMotor : MonoBehaviour {
     {
         checkStops();
         {
-            if (speed != 0) {
+            if (currSpeed != 0) {
                 if (!rotating)
-                    transform.Translate(0, 0, speed * Time.deltaTime);
+                    transform.Translate(0, 0, currSpeed * Time.deltaTime);
                 else
                 {
                     var sign = Mathf.Sign(angle);
@@ -83,13 +85,13 @@ public class MoveMotor : MonoBehaviour {
     {
         if (timer >= nextStop && !rotating)
         {
-            speed = 0;
+            currSpeed = 0;
             sheepModel.animation.Stop("sheep_walk");
         }
 
         if (timer >= (nextStop + timeToStay))
         {
-            speed = 1f;
+            currSpeed = speed;
             nextStop = getNextStop();
             timeToStay = getTimeToStay();
             sheepModel.animation.Play("sheep_walk");
