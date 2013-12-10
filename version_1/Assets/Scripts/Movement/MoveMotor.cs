@@ -11,6 +11,7 @@ public class MoveMotor : MonoBehaviour {
     private float timer = 0;
     private float nextStop;
     private float timeToStay;
+    private bool stop = false;
 
 
     public GameObject sheepModel;
@@ -49,55 +50,57 @@ public class MoveMotor : MonoBehaviour {
 		if (cupturingAnimation)
 			// Sheep was freed
             sheepModel.animation.Stop("sheep_shake");
-		
-        //goToWayPoint();
-        move();
+
+
+        StartCoroutine(Move1());
 	}
 
-    private void move()
+    IEnumerator Move1()
     {
-        checkStops();
+        if (!stop)
         {
-            if (currSpeed != 0) {
-                if (!rotating)
-                    transform.Translate(0, 0, currSpeed * Time.deltaTime);
-                else
-                {
-                    var sign = Mathf.Sign(angle);
-                    var a = rotationSpeed * Time.deltaTime;
-
-                    if (Mathf.Abs(angle) - a <= 0 || sign == 0)
-                    {
-                        rotating = false;
-                        angle = 0;
-                    }
-                    else
-                    {
-                        transform.RotateAround(transform.position, Vector3.up, sign * a);
-                        angle -= sign * a;
-                    }
-                }
-            }
+            sheepModel.animation.Play("sheep_walk");
+            transform.Translate(0, 0, speed * Time.deltaTime);
+            yield return new WaitForSeconds(Random.Range(5, 5));
         }
+        else
+        {
+            sheepModel.animation.Stop("sheep_walk");
+            stop = true;
+            yield return new WaitForSeconds(Random.Range(5, 5));
+            stop = false;
+        }
+        
+
+        
     }
 
-    private void checkStops()
+    IEnumerator Move()
     {
-        if (timer >= nextStop && !rotating)
+        if (!rotating)
         {
-            currSpeed = 0;
-            sheepModel.animation.Stop("sheep_walk");
-        }
-
-        if (timer >= (nextStop + timeToStay))
-        {
-            currSpeed = speed;
-            nextStop = getNextStop();
-            timeToStay = getTimeToStay();
             sheepModel.animation.Play("sheep_walk");
+            transform.Translate(0, 0, speed * Time.deltaTime);
+            yield return new WaitForSeconds(Random.Range(500, 5000));
+            sheepModel.animation.Stop("sheep_walk");
+            yield return new WaitForSeconds(Random.Range(500, 5000));
         }
+        else
+        {
+            var sign = Mathf.Sign(angle);
+            var a = rotationSpeed * Time.deltaTime;
 
-        timer++;
+            if (Mathf.Abs(angle) - a <= 0 || sign == 0)
+            {
+                rotating = false;
+                angle = 0;
+            }
+            else
+            {
+                transform.RotateAround(transform.position, Vector3.up, sign * a);
+                angle -= sign * a;
+            }
+        }       
 
     }
 
@@ -133,8 +136,11 @@ public class MoveMotor : MonoBehaviour {
         if (checkValidCollistions(collision))
         {
             angle = Random.Range(-90.0f, 90.0f);
-            if (collision.gameObject.name.Equals("fence"))
+            if (collision.gameObject.tag == "wall")
+            {
+                Debug.Log("WAAAAL");
                 angle = 90.0f;
+            }
             if (angle != 0)
                 rotating = true;
         }
