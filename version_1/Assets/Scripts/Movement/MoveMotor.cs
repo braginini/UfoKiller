@@ -52,28 +52,8 @@ public class MoveMotor : MonoBehaviour {
             sheepModel.animation.Stop("sheep_shake");
 
 
-        StartCoroutine(Move1());
+        StartCoroutine(Move());
 	}
-
-    IEnumerator Move1()
-    {
-        if (!stop)
-        {
-            sheepModel.animation.Play("sheep_walk");
-            transform.Translate(0, 0, speed * Time.deltaTime);
-            yield return new WaitForSeconds(Random.Range(5, 5));
-        }
-        else
-        {
-            sheepModel.animation.Stop("sheep_walk");
-            stop = true;
-            yield return new WaitForSeconds(Random.Range(5, 5));
-            stop = false;
-        }
-        
-
-        
-    }
 
     IEnumerator Move()
     {
@@ -106,12 +86,13 @@ public class MoveMotor : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        processColiision(collision);
+		Debug.Log("1");
+        processCollision(collision);
     }
 
     void OnCollisionStay(Collision collision)
     {
-        processColiision(collision);
+        processCollision(collision);
     }
 
     private bool checkValidCollistions(Collision collision)
@@ -128,12 +109,14 @@ public class MoveMotor : MonoBehaviour {
         return false;
     }
 
-    private void processColiision(Collision collision)
+    private void processCollision(Collision collision)
     {        
         if (rotating)
             return;
-
+		
+		Debug.Log("2");
         if (checkValidCollistions(collision))
+			Debug.Log("3");
         {
             angle = Random.Range(-90.0f, 90.0f);
             if (collision.gameObject.tag == "wall")
