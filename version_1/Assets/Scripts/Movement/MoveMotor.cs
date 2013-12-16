@@ -6,12 +6,11 @@ public class MoveMotor : MonoBehaviour {
     public float speed = 0.1f;
 	private float currSpeed;
     public float rotationSpeed = 90.0f;
-    private bool rotating = false;
+    public bool rotating = false;
     private float angle = 0;
     private float timer = 0;
     private float nextStop;
     private float timeToStay;
-    private bool stop = false;
 
 
     public GameObject sheepModel;
@@ -42,51 +41,68 @@ public class MoveMotor : MonoBehaviour {
 			{
 				cupturingAnimation = true;
 				Debug.Log("Help!!! Ufo is capturing me");
-                sheepModel.animation.Play("sheep_shake");
+				playAnimation("sheep_shake");
 			}
 			return;
 		}
 		
 		if (cupturingAnimation)
 			// Sheep was freed
-            sheepModel.animation.Stop("sheep_shake");
-
-
-        StartCoroutine(Move());
+            stopAnimation("sheep_shake");
+		
+        //goToWayPoint();
+        move();
 	}
 
-    IEnumerator Move()
+    private void move()
     {
-        if (!rotating)
+        checkStops();
         {
-            sheepModel.animation.Play("sheep_walk");
-            transform.Translate(0, 0, speed * Time.deltaTime);
-            yield return new WaitForSeconds(Random.Range(500, 5000));
-            sheepModel.animation.Stop("sheep_walk");
-            yield return new WaitForSeconds(Random.Range(500, 5000));
-        }
-        else
-        {
-            var sign = Mathf.Sign(angle);
-            var a = rotationSpeed * Time.deltaTime;
+            if (currSpeed != 0) {
+                if (!rotating)
+                    transform.Translate(0, 0, currSpeed * Time.deltaTime);
+                else
+                {
+                    var sign = Mathf.Sign(angle);
+                    var a = rotationSpeed * Time.deltaTime;
 
-            if (Mathf.Abs(angle) - a <= 0 || sign == 0)
-            {
-                rotating = false;
-                angle = 0;
+                    if (Mathf.Abs(angle) - a <= 0 || sign == 0)
+                    {
+                        rotating = false;
+                        angle = 0;
+                    }
+                    else
+                    {
+                        transform.RotateAround(transform.position, Vector3.up, sign * a);
+                        angle -= sign * a;
+                    }
+                }
             }
-            else
-            {
-                transform.RotateAround(transform.position, Vector3.up, sign * a);
-                angle -= sign * a;
-            }
-        }       
+        }
+    }
+
+    private void checkStops()
+    {
+        if (timer >= nextStop && !rotating)
+        {
+            currSpeed = 0;
+           	stopAnimation("sheep_walk");
+        }
+
+        if (timer >= (nextStop + timeToStay))
+        {
+            currSpeed = speed;
+            nextStop = getNextStop();
+            timeToStay = getTimeToStay();
+            playAnimation("sheep_walk");
+        }
+
+        timer++;
 
     }
 
     void OnCollisionEnter(Collision collision)
     {
-		Debug.Log("1");
         processCollision(collision);
     }
 
@@ -110,20 +126,15 @@ public class MoveMotor : MonoBehaviour {
     }
 
     private void processCollision(Collision collision)
-    {        
-        if (rotating)
+    {      
+		if (rotating)
             return;
-		
-		Debug.Log("2");
+
         if (checkValidCollistions(collision))
-			Debug.Log("3");
         {
             angle = Random.Range(-90.0f, 90.0f);
-            if (collision.gameObject.tag == "wall")
-            {
-                Debug.Log("WAAAAL");
+            if (collision.gameObject.tag.Equals("wall"))
                 angle = 90.0f;
-            }
             if (angle != 0)
                 rotating = true;
         }
@@ -131,12 +142,12 @@ public class MoveMotor : MonoBehaviour {
 
     private float getTimeToStay()
     {
-        return Random.Range(500f, 3000f);
+        return Random.Range(1000f, 2000f);
     }
 
     private float getNextStop()
     {
-        return timer + Random.Range(500f, 1000f);
+        return timer + Random.Range(1000f, 5000f);
     }
 
     public void hitted(RaycastHit hit, Ray ray)
@@ -147,4 +158,19 @@ public class MoveMotor : MonoBehaviour {
             particles.transform.parent = transform;
         }
     }
+	
+	private void playAnimation(string name) 
+	{
+		if (sheepModel) 
+		{
+			sheepModel.animation.Stop();
+			sheepModel.animation.Play(name);
+		}
+	}
+	
+	private void stopAnimation(string name) 
+	{
+		if (sheepModel) 
+			sheepModel.animation.Stop(name);
+	}
 }
