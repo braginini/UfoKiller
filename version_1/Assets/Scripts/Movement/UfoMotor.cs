@@ -7,6 +7,7 @@ public class UfoMotor : MonoBehaviour
 	public AudioClip ufoArriving;
 	public AudioClip ufoDying;
 	public AudioClip[] hittedAudio;
+	public float speed = 10f;
  	
 	public float stealHeight = 1f;
 	public int lives = 3;
@@ -266,7 +267,6 @@ public class UfoMotor : MonoBehaviour
 		
 		var to = new Vector3(0, 2f * escapeHeight, 0); // Somewhere very high
 		var distance = Vector3.Distance(transform.position, to);
-		var speed = 50f;
 		transform.position = Vector3.Lerp(transform.position, to, Time.deltaTime * speed / distance);
 	}
 
