@@ -17,6 +17,8 @@ public class MoveMotor : MonoBehaviour {
     public GameObject hitParticles;
 	
 	private bool cupturingAnimation = false;
+	
+	Quaternion newRotation;
 
     //private Transform contactRadius
 
@@ -31,6 +33,8 @@ public class MoveMotor : MonoBehaviour {
         rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         timeToStay = getTimeToStay();
         nextStop = getNextStop();
+		
+		newRotation = Quaternion.AngleAxis(-90f, Vector3.up);
 	}
 	
 	// Update is called once per frame
@@ -51,35 +55,55 @@ public class MoveMotor : MonoBehaviour {
             stopAnimation("sheep_shake");
 		
         //goToWayPoint();
-        move();
+        StartCoroutine(move());
 	}
 
-    private void move()
+    private IEnumerator move()
     {
-        checkStops();
-        {
-            if (currSpeed != 0) {
-                if (!rotating)
-                    transform.Translate(0, 0, currSpeed * Time.deltaTime);
-                else
-                {
-                    var sign = Mathf.Sign(angle);
-                    var a = rotationSpeed * Time.deltaTime;
+		checkCollisionsInFront();
+		
+		transform.Translate(0, 0, currSpeed * Time.deltaTime);
+		
+		if (rotating) 
+		{
+			var sign = Mathf.Sign(angle);
+            var a = rotationSpeed * Time.deltaTime;
 
-                    if (Mathf.Abs(angle) - a <= 0 || sign == 0)
-                    {
-                        rotating = false;
-                        angle = 0;
-                    }
-                    else
-                    {
-                        transform.RotateAround(transform.position, Vector3.up, sign * a);
-                        angle -= sign * a;
-                    }
-                }
-            }
-        }
+            if (Mathf.Abs(angle) - a <= 0 || sign == 0)
+            {				
+				yield return new WaitForSeconds(Random.Range(2, 10)); 
+				rotating = false;  
+				angle = 0;
+				
+            } else			
+            {
+            	transform.RotateAround(transform.position, Vector3.up, sign * a);
+                angle -= sign * a;
+            }	
+		}
+			
     }
+	
+	private void checkCollisionsInFront() 
+	{
+		Vector3 front = transform.TransformDirection(0f, .1f, .2f);
+		RaycastHit hit;
+		
+		Debug.DrawRay(transform.position, front, Color.green);
+		if (Physics.Raycast(transform.position, front, out hit) && !hit.collider.gameObject.tag.Equals("terrain")) 
+		{
+			
+			if (!rotating) 
+			{
+				rotating = true;
+				if (hit.collider.gameObject.tag.Equals("wall"))
+					angle = 180f;
+				else
+					angle = Random.Range(-90, 90);
+			}
+    		
+		}
+	}
 
     private void checkStops()
     {
@@ -103,12 +127,12 @@ public class MoveMotor : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        processCollision(collision);
+       // processCollision(collision);
     }
 
     void OnCollisionStay(Collision collision)
     {
-        processCollision(collision);
+        //processCollision(collision);
     }
 
     private bool checkValidCollistions(Collision collision)
@@ -147,7 +171,7 @@ public class MoveMotor : MonoBehaviour {
 
     private float getNextStop()
     {
-        return timer + Random.Range(1000f, 5000f);
+        return timer + Random.Range(1000000f, 500000000f);
     }
 
     public void hitted(RaycastHit hit, Ray ray)

@@ -16,7 +16,7 @@ public class SheepSpawner : MonoBehaviour
         for (int i = 0; i < count; ++i)
         {
             var pos = new Vector3(Random.Range(minX, maxX), 0f, Random.Range(minZ, maxZ));
-            Instantiate(sheep, pos, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up));
+            Instantiate(sheep, pos, Quaternion.AngleAxis(Random.Range(-360, 360), Vector3.up));
         }
     }
 }
