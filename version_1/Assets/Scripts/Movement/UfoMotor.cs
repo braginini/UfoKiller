@@ -8,6 +8,7 @@ public class UfoMotor : MonoBehaviour
 	public AudioClip ufoDying;
 	public AudioClip[] hittedAudio;
 	public float speed = 10f;
+	public float volume = 1f;
  	
 	public float stealHeight = 1f;
 	public int lives = 3;
@@ -64,7 +65,7 @@ public class UfoMotor : MonoBehaviour
         {
             killed = true;
 
-            audio.PlayOneShot(ufoDying);
+			audio.PlayOneShot(ufoDying, volume);
 
             GameObject.Find("Inventory").BroadcastMessage("incrementUfoKilled", 0);
 
@@ -157,7 +158,7 @@ public class UfoMotor : MonoBehaviour
 		if (lightBeam)
 		    lightBeam.animation.Play("Close");
 
-		 audio.PlayOneShot(ufoLeaving, 0.3f);
+		audio.PlayOneShot(ufoLeaving, volume);
 
 		yield return new WaitForSeconds(2f);
 
@@ -209,7 +210,7 @@ public class UfoMotor : MonoBehaviour
 			{
 				target.capturing = true;
 
-				audio.PlayOneShot(ufoArriving, 0.3f);
+				audio.PlayOneShot(ufoArriving, volume);
 				//Debug.Log("Capturing");
 			}
 		}
