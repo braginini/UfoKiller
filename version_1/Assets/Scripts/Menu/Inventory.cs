@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
 	
 	void Start()
 	{
+		Screen.showCursor = false;
 		ufoKilled = 0;
 		GlobalVariable.Instance.finalScore = ufoKilled;
 	}
