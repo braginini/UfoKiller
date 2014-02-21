@@ -1,0 +1,55 @@
+Initialize engine version: 4.3.1f1 (cebd4d9b5122)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [atiu9pag 8.14.1.6243]
+    Renderer: AMD Radeon HD 7470
+    Vendor:   ATI
+    VRAM:     1000 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\mikhail\Documents\UnityProjects\Own\UfoKiller\build\windows\version_1_mouse_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1280x1024 60Hz; virtual: 2560x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Shader 'Toony Gooch/Toony Gooch RimAlpha': fallback shader 'Toon/Lighted' not found
+Shader 'Toony Gooch/Toony Gooch RimLight': fallback shader 'Toon/Lighted' not found
+Unable to initialize the PXCUPipeline. Running application without camera
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+No barrel smoke particle systems attached
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Switching to GoToTargetState
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Switching to GoToTargetState
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Switching to GoToTargetState
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Switching to GoToTargetState
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
