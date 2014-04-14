@@ -17,6 +17,7 @@ public class NewMenuButton : MonoBehaviour
 	private string optionsBtnTag = "options_btn";
 	private string optionsExitBtn = "options_exit_btn"; //dog -nail remove!!! did this because can't determine level i nandroid
 
+	//Should be invoked after GUIAspectRatioScale.Start() method to scale GUI elements in proper way
 	void Start() {
 		normalScale = transform.localScale;
 	}
@@ -53,14 +54,6 @@ public class NewMenuButton : MonoBehaviour
 			Application.LoadLevel(mainMenuLevel);	
 		}
 	}
-
-	/*private string getCurrentLevelName() 
-	{
-		string[] split = EditorApplication.currentScene.Split(char.Parse("/"));
-		string level = split[split.Length - 1];
-		return level.Split(char.Parse("."))[0];
-
-	}*/
 
 	IEnumerator OnMouseUp()
 	{
