@@ -8,18 +8,26 @@ public class NewMenuButton : MonoBehaviour
 	public AudioClip beep;
 	public AudioClip hover;
 	public float clickScale = 1.1f;
-	public string optionsLevel = "Options_menu";
-	public string mainMenuLevel = "Main_menu";
+	public MenuLogic menuLogicScript;
+	public static float clickTimeout = 0.2f;
 
 	private Vector3 normalScale;
-	private string exitBtnTag = "exit_btn";
-	private string startBtnTag = "start_btn";
-	private string optionsBtnTag = "options_btn";
-	private string optionsExitBtn = "options_exit_btn"; //dog -nail remove!!! did this because can't determine level i nandroid
+	private static string exitBtnTag = "exit_btn";
+	private static string startBtnTag = "start_btn";
+	private static string optionsBtnTag = "options_btn";
+	private static string menuLogicTag = "menu_logic";
+	private static string optionsExitBtn = "options_exit_btn"; //dog -nail remove!!! did this because can't determine level i nandroid
 
 	//Should be invoked after GUIAspectRatioScale.Start() method to scale GUI elements in proper way
 	void Start() {
 		normalScale = transform.localScale;
+
+		menuLogicScript = GameObject.FindGameObjectWithTag(menuLogicTag).GetComponent<MenuLogic>();
+		if (!menuLogicScript) 
+		{
+			Debug.LogError("Menu logic script not found");
+			Application.Quit();
+		}
 	}
 
 	void OnMouseEnter()
@@ -36,7 +44,7 @@ public class NewMenuButton : MonoBehaviour
 	{
 		Click();
 		PlayBeep();
-		yield return new WaitForSeconds(0.35f);
+		yield return new WaitForSeconds(clickTimeout);
 		if (exitBtnTag.Equals(gameObject.tag)) 
 		{
 			Application.Quit();
@@ -45,13 +53,13 @@ public class NewMenuButton : MonoBehaviour
 		{
 
 		}
-		else if (optionsBtnTag.Equals(gameObject.tag) && !String.IsNullOrEmpty(optionsLevel)) 
+		else if (optionsBtnTag.Equals(gameObject.tag)) //clicked options btn on main menu
 		{
-			Application.LoadLevel(optionsLevel);
+			menuLogicScript.SwitchToOptionsMenu();
 		}
-		else if (optionsExitBtn.Equals(gameObject.tag) && !String.IsNullOrEmpty(mainMenuLevel)) 
+		else if (optionsExitBtn.Equals(gameObject.tag)) //clicked exit btn on options popup
 		{
-			Application.LoadLevel(mainMenuLevel);	
+			menuLogicScript.SwitchToMainMenu();	
 		}
 	}
 
