@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class MenuLogic : MonoBehaviour {
 	public GameObject optionsPopUp;
 	public GameObject exitBtn;
+	public string demoLevel = "demo_level";
 
 	// Use this for initialization
 	void Start () 
@@ -37,5 +39,11 @@ public class MenuLogic : MonoBehaviour {
 	{
 		EnableOptionsPopUp(false);
 		EnableExitBtn(true);
+	}
+
+	public void LoadDemoLevel() 
+	{
+		if (!String.IsNullOrEmpty(demoLevel))
+			Application.LoadLevel(demoLevel);
 	}
 }
