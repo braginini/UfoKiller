@@ -215,6 +215,7 @@
      <Compile Include="Assets\Scripts\Menu\Inventory.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuButton.cs" />
      <Compile Include="Assets\Scripts\Menu\new\GUIAspectRatioScale.cs" />
+     <Compile Include="Assets\Scripts\Menu\new\MenuControl.cs" />
      <Compile Include="Assets\Scripts\Menu\new\MenuLogic.cs" />
      <Compile Include="Assets\Scripts\Menu\new\NewMenuButton.cs" />
      <Compile Include="Assets\Scripts\Menu\new\TextureCrop.cs" />
