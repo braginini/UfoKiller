@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\new\MenuControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NGUI\Scripts\UI\UIRoot.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu\new\MenuControl.cs" Line="80" Column="25" />
-      <File FileName="Assets\Scripts\Menu\MenuButton.cs" Line="26" Column="13" />
+      <File FileName="Assets\NGUI\Scripts\UI\UIRoot.cs" Line="75" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
