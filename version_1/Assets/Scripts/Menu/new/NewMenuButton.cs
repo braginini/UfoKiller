@@ -17,16 +17,21 @@ public class NewMenuButton : MonoBehaviour
 	private static string optionsBtnTag = "options_btn";
 	private static string menuLogicTag = "menu_logic";
 	private static string optionsExitBtn = "options_exit_btn"; //dog -nail remove!!! did this because can't determine level i nandroid
+	private GameObject menuObject;
 
 	//Should be invoked after GUIAspectRatioScale.Start() method to scale GUI elements in proper way
 	void Start() {
 		normalScale = transform.localScale;
 
-		menuLogicScript = GameObject.FindGameObjectWithTag(menuLogicTag).GetComponent<MenuLogic>();
-		if (!menuLogicScript) 
+		menuObject = GameObject.FindGameObjectWithTag(menuLogicTag);
+		if (menuObject) 
 		{
-			Debug.LogError("Menu logic script not found");
-			Application.Quit();
+			menuLogicScript = menuObject.GetComponent<MenuLogic>();
+			if (!menuLogicScript) 
+			{
+				Debug.LogError("Menu logic script not found");
+				Application.Quit();
+			}
 		}
 	}
 
@@ -51,7 +56,7 @@ public class NewMenuButton : MonoBehaviour
 		}
 		else if (startBtnTag.Equals(gameObject.tag)) 
 		{
-
+			menuLogicScript.LoadDemoLevel();
 		}
 		else if (optionsBtnTag.Equals(gameObject.tag)) //clicked options btn on main menu
 		{
@@ -74,6 +79,7 @@ public class NewMenuButton : MonoBehaviour
 	}
 	
 	public void Click() {
+		Debug.Log("Pause------------->");
 		transform.localScale = normalScale * clickScale;
 	}
 	
