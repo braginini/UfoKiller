@@ -34,7 +34,7 @@ public class MenuControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		//Debug.Log(Screen.height + "x" + Screen.width);
 	}
 
 	void LoadLevel(string level) 
