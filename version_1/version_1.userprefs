@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NGUI\Scripts\UI\UIRoot.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\NGUIFolder\Assets\Scripts\ResolutionController.cs">
     <Files>
-      <File FileName="Assets\NGUI\Scripts\UI\UIRoot.cs" Line="75" Column="63" />
+      <File FileName="..\..\NGUIFolder\Assets\Scripts\ResolutionController.cs" Line="18" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
