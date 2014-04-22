@@ -50,11 +50,8 @@ public class TextureSizeController : MonoBehaviour {
 				chosenTexture = udef;
 		}
 
-		//Debug.Log(chosenTexture.name);
-		if (!showTestLabel)
-			testLabel.SetActive(false);
-		else
-			testLabel.GetComponent<UILabel>().text = "Texture: " + chosenTexture.name + " Screen: " + Screen.width + "x" + Screen.height;
+
+
 		if (!texture.name.Equals(chosenTexture.name)) 
 		{
 			if (texture.mainTexture != null)
@@ -62,6 +59,13 @@ public class TextureSizeController : MonoBehaviour {
 		
 			texture.mainTexture = Resources.Load(chosenTexture.path) as Texture2D;
 			texture.MakePixelPerfect();
+
+			//Debug.Log(chosenTexture.name);
+			if (!showTestLabel)
+				testLabel.SetActive(false);
+			else
+				testLabel.GetComponent<UILabel>().text = "Texture: " + chosenTexture.path + " " + texture.width + "x" + texture.height + 
+					" Screen: " + Screen.width + "x" + Screen.height;
 
 		}
 	}
