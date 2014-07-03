@@ -57,14 +57,14 @@ public class TextureSizeController : MonoBehaviour {
 			if (texture.mainTexture != null)
 				Resources.UnloadAsset(texture.mainTexture);
 		
-			texture.mainTexture = Resources.Load(chosenTexture.path) as Texture2D;
+			texture.mainTexture = Resources.Load(chosenTexture.path) as Texture;
 			texture.MakePixelPerfect();
 
 			//Debug.Log(chosenTexture.name);
 			if (!showTestLabel)
 				testLabel.SetActive(false);
 			else
-				testLabel.GetComponent<UILabel>().text = "Texture: " + chosenTexture.path + " " + texture.width + "x" + texture.height + 
+				testLabel.GetComponent<UILabel>().text = "Texture: " + chosenTexture.path + " " + texture.mainTexture.width + "x" + texture.mainTexture.height + 
 					" Screen: " + Screen.width + "x" + Screen.height;
 
 		}

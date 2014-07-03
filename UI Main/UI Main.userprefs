@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UI Main\Scripts\MenuControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UI Main\Scripts\TextureSizeController.cs">
     <Files>
-      <File FileName="Assets\UI Main\Scripts\MenuControl.cs" Line="77" Column="53" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UIButton.cs" Line="1" Column="1" />
       <File FileName="Assets\UI Main\Scripts\MenuControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Scripts\Interaction\UIButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\UI Main\Scripts\TextureSizeController.cs" Line="54" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
