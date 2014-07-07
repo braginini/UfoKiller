@@ -51,6 +51,7 @@ public class FragmentedObjectExploder : MonoBehaviour
             {
                 foreach (Transform child in toExplode.transform)
                 {
+					Debug.Log("hahaha");
 
                     GameObject GO = child.gameObject;
 
