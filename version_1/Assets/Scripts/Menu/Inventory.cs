@@ -6,13 +6,14 @@ public class Inventory : MonoBehaviour
 	public int sheepLeft = 0;
 	public int ufoKilled = 0;
 	public GUIText sheepLextText;
-	public GUIText ufoKilledText;
+	public UILabel ufoKilledText;
 	
 	void Start()
 	{
 		Screen.showCursor = false;
 		ufoKilled = 0;
 		GlobalVariable.Instance.finalScore = ufoKilled;
+		ufoKilledText = GameObject.Find("Scores Label").GetComponent<UILabel>();
 	}
 	
 	public void updateSheepCount(int count)
