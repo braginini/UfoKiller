@@ -155,7 +155,7 @@ public abstract class BaseTurret : BaseGun {
 	            //here we reduce the number of actual bullets launched to 2
 	            GameObject g = bulletSpawns[Random.Range(0, bulletSpawns.Length)];
 	            Rigidbody bullet = Instantiate(bulletPrefab, g.transform.position, g.transform.rotation) as Rigidbody;
-	            bullet.velocity = g.transform.forward*500;
+	            bullet.velocity = g.transform.forward * 300;
 	            Destroy(bullet.gameObject, 1f);
 	        }
 	        /*foreach (GameObject g in bulletSpawns) {
