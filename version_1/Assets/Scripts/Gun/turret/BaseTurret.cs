@@ -79,7 +79,7 @@ public abstract class BaseTurret : BaseGun {
 
 	        Vector3 fwd = transform.TransformDirection(transform.forward);
 
-	        RaycastHit hit;
+	        //RaycastHit hit;
 
 	        //Debug.DrawRay(transform.position, fwd * 10, Color.green);	
 
