@@ -852,7 +852,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53794cb77b19b3840938993a80756599, type: 3}
   m_Name: 
@@ -861,7 +861,7 @@ MonoBehaviour:
   bulletsLeft: 0
   damage: 1
   reloadSound: {fileID: 0}
-  fireRate: .100000001
+  fireRate: .400000006
   shotSound: {fileID: 8300000, guid: 5c56433360ac9f144ad9d442d4ab9901, type: 3}
   bulletPrefab: {fileID: 5400000, guid: a773beeafba6b81488b024ba1b38fdb1, type: 2}
   bulletSpawns: []
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03bbc11aa9c784c41bba3adad84efac1, type: 3}
   m_Name: 
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3fbadda9e11e741bb821dbb2697de1, type: 3}
   m_Name: 

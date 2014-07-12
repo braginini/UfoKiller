@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -38,8 +38,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5f630a4895644f9c82a3b84d6db72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ufo: {fileID: 100000, guid: 44d0b192740e7ea43af3fbd95080c58c, type: 2}
-  spawnTime: 3
+  ufo: {fileID: 100036, guid: 105a1e9360727a840a140520e619df23, type: 2}
+  spawnTime: 5
   minX: -30
   maxX: 0
   minZ: 20
