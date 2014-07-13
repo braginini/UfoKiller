@@ -11,6 +11,8 @@ public abstract class BaseTurret : BaseGun {
 	private float nextFire = 0f;
 	
 	public AudioClip shotSound;
+
+	public float shotVolume = .3f;
 	
 	public Rigidbody bulletPrefab;
 	
@@ -105,7 +107,7 @@ public abstract class BaseTurret : BaseGun {
 	
 	public virtual void PlaySound() {
 		if (shotSound) {
-			AudioSource.PlayClipAtPoint(shotSound, transform.position, 0.5f);			
+			AudioSource.PlayClipAtPoint(shotSound, transform.position, shotVolume);			
 		}
 	}
 	

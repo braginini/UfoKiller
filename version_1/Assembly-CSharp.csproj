@@ -183,6 +183,7 @@
      <Compile Include="Assets\Scripts\GlobalVariable.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\Gun\BazookaScript.cs" />
+     <Compile Include="Assets\Scripts\Gun\Bullet.cs" />
      <Compile Include="Assets\Scripts\Gun\BulletShellExit.cs" />
      <Compile Include="Assets\Scripts\Gun\Gun.cs" />
      <Compile Include="Assets\Scripts\Gun\GunScript.cs" />

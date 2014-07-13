@@ -6,12 +6,13 @@ public class UfoMotor : MonoBehaviour
 	public AudioClip ufoLeaving;
 	public AudioClip ufoArriving;
 	public AudioClip ufoDying;
-	public AudioClip[] hittedAudio;
 	public float speed = 10f;
 	public float volume = 1f;
+	public float hitVolume = .7f;
+	public AudioClip[] hittedAudio;
  	
 	public float stealHeight = 1f;
-	public int lives = 3;
+	public int lives = 10;
 	private TargetedSheep target;
 	private bool steal = false;
 	private delegate void UpdateCurrentState();
@@ -22,50 +23,16 @@ public class UfoMotor : MonoBehaviour
     public GameObject lightBeam;
 
     private FragmentedObjectExploder exploder;
-	
-	public void hitted()
-	{
-		Debug.Log("Bullet is hit me. Lives left " + lives);
-		--lives;
-		if (lives == 0)
-		{
-			killed = true;
-			
-			var explosion = gameObject.GetComponentInChildren<ParticleSystem>();
-			if (explosion)
-			{
-				Debug.Log("Expolosion is running");
-        		explosion.Play();
-			}
-			else
-				Debug.LogWarning("Expolosion is not found");
-			
-			audio.PlayOneShot(ufoDying);
-			GameObject.Find("Inventory").BroadcastMessage("incrementUfoKilled", 0);
-
-            BeforeDestroy();
-            if (exploder)
-		        StartCoroutine(this.exploder.Explode());
-
-		}
-		else if (lives > 0 && !this.audio.isPlaying) {
-
-            Debug.Log("");
-			this.audio.clip = hittedAudio[Random.Range(0, hittedAudio.Length)];
-		    this.audio.volume = 1f;
-			this.audio.Play();
-		}
-	}
 
     public void hitted(RaycastHit hit, Ray ray)
     {
-        Debug.Log("Bullet is hit me. Lives left " + lives);
+        //Debug.Log("Bullet is hit me. Lives left " + lives);
         --lives;
         if (lives == 0)
         {
             killed = true;
 
-			audio.PlayOneShot(ufoDying, volume);
+			AudioSource.PlayClipAtPoint(ufoDying, transform.position, volume);		
 
             GameObject.Find("Inventory").BroadcastMessage("incrementUfoKilled", 0);
 
@@ -73,13 +40,11 @@ public class UfoMotor : MonoBehaviour
             if (exploder)
                 StartCoroutine(this.exploder.Explode());
                 
-        }
-        else if (lives > 0 && !this.audio.isPlaying)
-        {
-            this.audio.clip = hittedAudio[Random.Range(0, hittedAudio.Length)];
-            this.audio.volume = 1f;
-            this.audio.Play();
-        }
+        } else 
+		{
+			AudioSource.PlayClipAtPoint(hittedAudio[Random.Range(0, hittedAudio.Length)], 
+			                            transform.position, hitVolume);	
+		}
 
         if (hitParticles)
         {
@@ -116,19 +81,6 @@ public class UfoMotor : MonoBehaviour
 			target.targeted = false;
 		}
 	}
-	
-	void OnTriggerEnter(Collider other)
-	{
-		if (killed) // Ignore all bullets if ufo was aleady killed but not dissapeared yet
-			// (or it could count one ufo as several killed)
-			return;
-
-		if (other.gameObject.tag == "bullet")
-		{
-			Destroy(other.gameObject);
-			hitted();
-		}
-    }
 	
 	private void findTarget()
 	{
@@ -186,7 +138,6 @@ public class UfoMotor : MonoBehaviour
 		findTarget();		
 		if (target)
 		{
-			Debug.Log("Switching to GoToTargetState");
 			updateState = GoToTargetState;
 		}
 		else
@@ -221,7 +172,7 @@ public class UfoMotor : MonoBehaviour
 			return; 
 		}
 
-		var speed = 5f + distance * distance / 500;
+		var speed = 5f + distance * distance / 800;
 		var nextPosition = Vector3.Lerp(transform.position, to, Time.deltaTime * speed / distance);
 		
 		// This cycle here is for handling situations when speed of the ufo is too high to get to the capturing area

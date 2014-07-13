@@ -85,9 +85,9 @@ public class GunScript : MonoBehaviour {
 		Ray ray = camera.ViewportPointToRay(crossHair.transform.position);
 		RaycastHit hit;	
 		
-		if (Physics.Raycast(ray, out hit , Mathf.Infinity) && hit.collider.gameObject.tag.Equals("ufo")) {			
-            hit.collider.gameObject.GetComponent<UfoMotor>().hitted();
-		}
+		//if (Physics.Raycast(ray, out hit , Mathf.Infinity) && hit.collider.gameObject.tag.Equals("ufo")) {			
+        //    hit.collider.gameObject.GetComponent<UfoMotor>().hitted();
+		//}
 		
 		float currTime = Time.time;
 		

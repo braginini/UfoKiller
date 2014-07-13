@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Control\FragmentedObjectExploder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Movement\UfoMotor.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gun\turret\TouchTuret.cs" Line="4" Column="29" />
-      <File FileName="Assets\Scripts\Gun\turret\Turret.cs" Line="4" Column="30" />
-      <File FileName="Assets\Scripts\Gun\turret\BaseTurret.cs" Line="158" Column="57" />
-      <File FileName="Assets\Scripts\Control\FragmentedObjectExploder.cs" Line="95" Column="1" />
+      <File FileName="Assets\Scripts\Movement\UfoMotor.cs" Line="45" Column="58" />
+      <File FileName="Assets\Scripts\Gun\turret\Turret.cs" Line="4" Column="27" />
+      <File FileName="Assets\Scripts\Gun\turret\BaseTurret.cs" Line="161" Column="42" />
+      <File FileName="Assets\Scripts\Gun\Bullet.cs" Line="25" Column="6" />
+      <File FileName="Assets\Scripts\Control\LookAtTouch.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\Gun\GunScript.cs" Line="129" Column="1" />
+      <File FileName="Assets\Scripts\Control\LookAtBase.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
