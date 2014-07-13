@@ -22,7 +22,7 @@ public class UfoMotor : MonoBehaviour
     public GameObject hitParticles;
     public GameObject lightBeam;
 
-    private FragmentedObjectExploder exploder;
+	private FragmentedObjectExploder exploder;
 
     public void hitted(RaycastHit hit, Ray ray)
     {
@@ -42,7 +42,9 @@ public class UfoMotor : MonoBehaviour
                 
         } else 
 		{
-			AudioSource.PlayClipAtPoint(hittedAudio[Random.Range(0, hittedAudio.Length)], 
+			//do not create a sound every time, just in 30% of cases
+			if (Random.Range(0, 100) > 70) 
+				AudioSource.PlayClipAtPoint(hittedAudio[Random.Range(0, hittedAudio.Length)], 
 			                            transform.position, hitVolume);	
 		}
 

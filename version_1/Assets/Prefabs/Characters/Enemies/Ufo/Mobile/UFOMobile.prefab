@@ -624,13 +624,15 @@ MonoBehaviour:
   ufoArriving: {fileID: 8300000, guid: 5827a8e784229364eb500906a69b00e1, type: 3}
   ufoDying: {fileID: 8300000, guid: 9323b725332aeaa4c88c46a764cc5bc8, type: 3}
   speed: 5
-  volume: 1
-  hitVolume: .699999988
+  volume: .600000024
+  hitVolume: 1
   hittedAudio:
   - {fileID: 8300000, guid: f071af2b784c5574ca534f561b0d07f2, type: 3}
   - {fileID: 8300000, guid: 9a18b69c05ee92648860e947943e65d5, type: 3}
   - {fileID: 8300000, guid: e86835bd906177841b2a7e6c61b58a62, type: 3}
   - {fileID: 8300000, guid: e07a345959b8b6449b8bc77e347fb45c, type: 3}
+  - {fileID: 8300000, guid: 05a8d4b5c8cc6344b85f8a7bcf99c28d, type: 3}
+  - {fileID: 8300000, guid: c1c7ebd250fcef549953d8fbf083a1a6, type: 3}
   stealHeight: .00109999999
   lives: 15
   hitParticles: {fileID: 100002, guid: 8d120b6aee2c49d49b61535ab70853fa, type: 2}

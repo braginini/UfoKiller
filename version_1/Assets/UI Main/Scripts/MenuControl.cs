@@ -9,25 +9,19 @@ public class MenuControl : MonoBehaviour {
 	public GameObject startBtn;
 	public GameObject optionsBtn;
 	public GameObject mainPanel;
+	public GameObject touchInput;
+	public AudioClip pauseAudio;
+	public AudioClip gameAudio;
 
 	public string demoLevelName = "demo_level";
 
 	public float uiWaitTimeout = .35f;
 
+	public bool paused = false;
+
 	// Use this for initialization
 	void Start ()
 	{
-		if (!optionsPopUp) 
-		{
-			Debug.LogError("Options pop up not found");
-			Application.Quit();
-		}
-
-		if (!closeBtn) 
-		{
-			Debug.LogError("Close button not found");
-			Application.Quit();
-		}
 
 	}
 	
@@ -89,6 +83,44 @@ public class MenuControl : MonoBehaviour {
 		if (!String.IsNullOrEmpty(demoLevelName)) 
 		{
 			Application.LoadLevel(demoLevelName);
+		}
+	}
+
+	public void Pause() 
+	{
+		if (paused)
+		{
+			
+			
+			if (touchInput)
+				touchInput.SetActive(true);
+
+			if (gameAudio) 
+			{
+				audio.clip = gameAudio;
+				audio.volume = .6f;
+				audio.Play();
+				audio.loop = true;
+			}
+
+			Time.timeScale = 1;
+			paused = false;
+		}
+		else
+		{
+			if (touchInput)
+				touchInput.SetActive(false);
+
+			if (pauseAudio) 
+			{
+				audio.clip = pauseAudio;
+				audio.volume = 1f;
+				audio.Play();
+				audio.loop = true;
+			}
+
+			Time.timeScale = 0;
+			paused = true;
 		}
 	}
 

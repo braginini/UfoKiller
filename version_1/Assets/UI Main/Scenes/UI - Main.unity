@@ -2827,8 +2827,12 @@ MonoBehaviour:
   startBtn: {fileID: 102002163}
   optionsBtn: {fileID: 261689227}
   mainPanel: {fileID: 235936629}
+  touchInput: {fileID: 0}
+  pauseAudio: {fileID: 0}
+  gameAudio: {fileID: 0}
   demoLevelName: demo_level
   uiWaitTimeout: .349999994
+  paused: 0
 --- !u!4 &1757985274
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,11 +2852,11 @@ AudioSource:
   m_GameObject: {fileID: 1757985272}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: d1ba3d6bc0044344898afc04dda0658f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8b47cc4723a807c4383a467f5782aa3a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
