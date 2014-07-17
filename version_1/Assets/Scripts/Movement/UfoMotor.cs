@@ -6,7 +6,7 @@ public class UfoMotor : MonoBehaviour
 	public AudioClip ufoLeaving;
 	public AudioClip ufoArriving;
 	public AudioClip ufoDying;
-	public float speed = 10f;
+	public float ufoSpeed = 2f;
 	public float volume = 1f;
 	public float hitVolume = .7f;
 	public AudioClip[] hittedAudio;
@@ -174,7 +174,7 @@ public class UfoMotor : MonoBehaviour
 			return; 
 		}
 
-		var speed = 5f + distance * distance / 800;
+		var speed = ufoSpeed + distance * distance / 800;
 		var nextPosition = Vector3.Lerp(transform.position, to, Time.deltaTime * speed / distance);
 		
 		// This cycle here is for handling situations when speed of the ufo is too high to get to the capturing area
@@ -221,7 +221,7 @@ public class UfoMotor : MonoBehaviour
 		
 		var to = new Vector3(0, 2f * escapeHeight, 0); // Somewhere very high
 		var distance = Vector3.Distance(transform.position, to);
-		transform.position = Vector3.Lerp(transform.position, to, Time.deltaTime * speed / distance);
+		transform.position = Vector3.Lerp(transform.position, to, Time.deltaTime * ufoSpeed * 3 / distance);
 	}
 
     //some opereations that should be done before destroying/exploding object
